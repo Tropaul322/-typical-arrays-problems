@@ -1,5 +1,21 @@
-exports.min = (array = []) => array.length > 0 ? Math.min(...array) : 0;
+exports.min = function min (array){
+    if (array == undefined || array.length == 0){
+        return 0
+    }
+    return Math.min.apply(null, array);
+}
 
-exports.max = (array = []) => array.length > 0 ? Math.max(...array) : 0;
+exports.max = function max (array){
+    if (array == undefined || array.length == 0){
+        return 0
+    }
+    return Math.max.apply(null, array);
+}
 
-exports.avg = (array = []) => array.reduce((acc, cur) => acc + cur, 0) / array.length || 0;
+exports.avg = function avg (array){
+    if(array == undefined){
+        return 0 
+    }
+    var b = array.reduce((a, b) => a+b, 0 )/array.length || 0 
+    return b 
+}
